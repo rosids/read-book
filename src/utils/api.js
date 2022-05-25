@@ -8,3 +8,12 @@ export const fetchBooks = () => {
 
   return response;
 };
+
+export const fetchBookId = (bookId) => {
+  const response = fetch(`${BASE_API_URL}/${bookId}`, {
+    method: 'GET',
+    body: JSON.stringify(),
+  }).then((res) => res.json());
+
+  return response;
+};
