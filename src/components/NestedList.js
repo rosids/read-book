@@ -26,11 +26,17 @@ export default function NestedList({ lists }) {
         </ListSubheader>
       }
     >
-      {lists.map((list) => (
-        <ListItemButton key={list._id} onClick={() => handleDetails(list._id)} >
-          <ListItemText primary={list.name} />
-        </ListItemButton>
-      ))}
+      {!lists.length ?
+        <ListItemText style={{textAlign:"center"}}>
+          Você não tem livros lidos. Cadastre um livro!
+        </ListItemText>
+      :
+        lists.map((list) => (
+          <ListItemButton key={list._id} onClick={() => handleDetails(list._id)} >
+            <ListItemText primary={list.name} />
+          </ListItemButton>
+        ))
+      }
     </List>
   );
 }
