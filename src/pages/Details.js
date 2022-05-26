@@ -35,7 +35,7 @@ function Details() {
 
     const fetchApi = async () => {
       const book = await fetchBookId(id);
-      setBook([book]);
+      setBook(book);
     };
 
     fetchApi();
