@@ -17,3 +17,12 @@ export const fetchBookId = (bookId) => {
 
   return response;
 };
+
+export const fetchDeleteBook = (bookId) => {
+  const response = fetch(`${BASE_API_URL}/${bookId}`, {
+    method: 'DELETE',
+    body: JSON.stringify(),
+  }).then((res) => res.json());
+
+  return response;
+};
