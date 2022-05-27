@@ -22,7 +22,7 @@ function DeleteConfirmationDialogRaw({ open, onClose, bookId }) {
   const handleOk = () => {
     fetchDeleteBook(bookId).then(res => {
       if(res.error) {
-        setMessage('Não foi possível excluir o livro. Tente novamente mais tarde!');
+        setMessage(res.error.message);
         setError(true);
         return setOpenActionResponse(true);
       }
