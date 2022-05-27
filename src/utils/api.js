@@ -26,3 +26,42 @@ export const fetchDeleteBook = (bookId) => {
 
   return response;
 };
+
+export const fetchNewBook = async (
+  name,
+  comment,
+) => {
+  const response = await fetch(`${BASE_API_URL}`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      comment,
+    }),
+  }).then((res) => res.json());
+
+  return response;
+};
+
+export const fetchUpdatedBook = async (
+  bookId,
+  name,
+  comment,
+) => {
+  const response = await fetch(`${BASE_API_URL}/${bookId}`, {
+    method: 'PATCH',
+    headers: {
+      'Accept': 'application/json',
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      comment,
+    }),
+  }).then((res) => res.json());
+
+  return response;
+};
