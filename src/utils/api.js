@@ -1,7 +1,7 @@
 const BASE_API_URL = 'http://localhost:3001/books';
 
-export const fetchBooks = () => {
-  const response = fetch(BASE_API_URL, {
+export const fetchBooks = (page) => {
+  const response = fetch(`${BASE_API_URL}?page=${page}`, {
     method: 'GET',
     body: JSON.stringify(),
   }).then((res) => res.json());

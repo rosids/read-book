@@ -5,6 +5,13 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { useNavigate } from 'react-router-dom';
 
+const style = {
+  display: '-webkit-box',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  WebkitLineClamp: '1',
+  WebkitBoxOrient: 'vertical'
+};
 
 export default function NestedList({ lists }) {
   const navigate = useNavigate();
@@ -26,14 +33,9 @@ export default function NestedList({ lists }) {
         </ListSubheader>
       }
     >
-      {!lists.length ?
-        <ListItemText style={{textAlign:"center"}}>
-          Você não tem livros lidos. Cadastre um livro!
-        </ListItemText>
-      :
-        lists.map((list) => (
+      {lists.data.map((list) => (
           <ListItemButton key={list._id} onClick={() => handleDetails(list._id)} >
-            <ListItemText primary={list.name} />
+            <ListItemText primary={list.name} style={style} />
           </ListItemButton>
         ))
       }
