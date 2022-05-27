@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom';
 
 const pages = [
   { name: 'Home', pathname: '/' },
+  { name: 'Criar', pathname: '/criar' },
 ];
 
 const ResponsiveAppBar = () => {

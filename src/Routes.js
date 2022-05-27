@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Provider from './context/Provider';
 import Home from './pages/Home';
 import Details from './pages/Details';
+import Create from './pages/Create';
 
 function AllRoutes() {
   return (
@@ -10,6 +11,7 @@ function AllRoutes() {
         <Routes>
           <Route exact path="/" element={ <Home /> } />
           <Route exact path="/:id" element={ <Details />} />
+          <Route exact path="/criar" element={ <Create />} />
         </Routes>
       </Provider>
     </BrowserRouter>
