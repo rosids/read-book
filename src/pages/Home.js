@@ -24,7 +24,8 @@ const useStyles = makeStyles({
   },
   cardWarning: {
     margin: '80px auto',
-    padding: 10,
+    justifyContent: 'center',
+    padding: '10px !important',
     width: '70%',
     '@media (max-width: 900px)': {
       width: '90%',
@@ -62,19 +63,17 @@ function Home() {
   return (
     <>
       <ResponsiveAppBar />
-      <main>
-        {!loading && books.data && !books.data.length &&
-            <Alert severity="warning" className={classes.cardWarning}>Você não tem livros lidos. Cadastre um livro!</Alert>
-        }
-        {!loading && books.data && books.data.length > 0 &&
-          <Paper elevation={4} className={classes.card}>
-            <NestedList lists={books} />
-            <Stack spacing={2} className={classes.paginationContainer}>
-              <Pagination count={totalPages} variant="outlined" color="primary" onChange={handleChange} />
-            </Stack>
-          </Paper>
-        }
-      </main>
+      {!loading && books.data && !books.data.length &&
+        <Alert severity="warning" className={classes.cardWarning}>Você não tem livros lidos. Cadastre um livro!</Alert>
+      }
+      {!loading && books.data && books.data.length > 0 &&
+        <Paper elevation={4} className={classes.card}>
+          <NestedList lists={books} />
+          <Stack spacing={2} className={classes.paginationContainer}>
+            <Pagination count={totalPages} variant="outlined" color="primary" onChange={handleChange} />
+          </Stack>
+        </Paper>
+      }
     </>
   );
 }

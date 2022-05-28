@@ -4,3 +4,9 @@
   margin: 0;
   padding: 0;
 }
+
+.page {
+  background-color: #282c34;
+  height: 100vh;
+  overflow: auto;
+}

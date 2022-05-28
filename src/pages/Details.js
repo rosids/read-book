@@ -9,12 +9,6 @@ import BasicCard from "../components/BasicCard";
 import { fetchBookId } from "../utils/api";
 
 const useStyles = makeStyles({
-  page: {
-    backgroundColor: '#282c34',
-    height: '100%',
-    width: '100%',
-    position: 'absolute',
-  },
   card: {
     margin: '60px auto auto',
     width: '70%',
@@ -42,12 +36,12 @@ function Details() {
   }, [location]);
 
   return (
-    <main className={classes.page}>
+    <>
       <ResponsiveAppBar />
       <Paper elevation={4} className={classes.card}>
         <BasicCard book={book} />
       </Paper>
-    </main>
+    </>
   );
 }
 
